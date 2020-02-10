@@ -7,10 +7,8 @@ const Profile = () => {
     return (
         <div className="page-content">
 
-            <div className="page-content__inner">
-
                 <div className="user">
-                    <img src="https://placehold.it/150x150" alt="user-logo" className="user__logo" />
+                    <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-520570876-1552598555.jpg?crop=0.617xw:0.412xh;0.215xw,0.0214xh&resize=640:*" alt="user-logo" className="user__logo" />
                     <div className="user__info">
                         <h2 className="user__info-title">Andrew S.</h2>
                         <p className="user__info-item">Date of Birth: 01.06.1990</p>
@@ -21,7 +19,6 @@ const Profile = () => {
                 </div>
 
                 <MyPosts />
-            </div>
 
         </div>
     );

@@ -11,3 +11,11 @@
 	grid-template-columns: 2fr 10fr;
 	grid-gap: 15px;
 }
+
+.app-wrapper-content {
+	padding: 30px;
+	grid-area: content;
+
+	box-shadow: 0px 0px 10px #fff;
+	border-radius: 4px;
+}

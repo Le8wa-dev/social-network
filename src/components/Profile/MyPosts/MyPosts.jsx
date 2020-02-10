@@ -12,9 +12,8 @@ const MyPosts = () => {
             </form>
 
             <div className={s.posts__list}>
-                <Post />
-                <Post />
-                <Post />
+                <Post message="Hi, how are you?" likes="15"/>
+                <Post message="Hey doode, it's my first post!" likes="20"/>
             </div>
         </div>
     );
