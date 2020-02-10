@@ -1,0 +1,28 @@
+.item {
+	margin-top: 15px;
+	display: flex;
+	align-items: center;
+}
+
+.item_avatar {
+	overflow: hidden;
+	
+	border-radius: 50%;
+}
+
+.item_avatar img {
+	width: 40px;
+}
+
+.item_text {
+	margin-left: 30px;
+
+	font-size: 18px;
+}
+
+.item span {
+	display: block;
+	margin-left: 30px;
+
+	font-size: 14px;
+}

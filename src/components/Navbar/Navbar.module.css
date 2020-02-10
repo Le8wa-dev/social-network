@@ -1,0 +1,42 @@
+.nav {
+	padding: 30px 10px 30px 30px;
+	grid-area: nav;
+
+	box-shadow: 0px 0px 10px #fff;
+	border-radius: 4px;
+}
+
+.item + .item{
+	margin-top: 10px;
+}
+
+.item:last-child {
+	margin-top: 35px;
+}
+
+.item a {
+	padding: 10px 0;
+	position: relative;
+
+	font-size: 20px;
+}
+
+.item a::before {
+	content: "";
+	width: 0;
+	height: 1px;
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	background-color: #21ebff;
+
+	transition: .3s;
+}
+
+.item a:hover::before,
+.item.active a::before {
+	width: 100%;
+	box-shadow: 0px 0px 10px #21ebff;
+}
