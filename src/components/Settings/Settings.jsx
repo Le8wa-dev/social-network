@@ -4,7 +4,7 @@ import s from './Settings.module.css'
 const Settings = (props) => {
     return (
         <div className={s.settings}>
-            Settings
+             <h2 className={s.title}>Settings</h2>
         </div>
     );
 }

@@ -1,29 +1,3 @@
 .page-content {
 	overflow: hidden;
 }
-
-/* User */
-.user {
-	display: flex;
-	align-items: flex-start;
-}
-
-.user__logo {
-	margin-top: 10px;
-	width: 200px;
-}
-
-.user__logo img {
-	width: 100%;
-}
-
-.user__info {
-	margin-left: 50px;
-}
-
-.user__info-item {
-	margin-top: 10px;
-}
-.user__info-item a {
-	text-decoration: underline;
-}

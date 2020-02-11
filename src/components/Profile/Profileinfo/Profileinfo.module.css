@@ -1,0 +1,24 @@
+.user {
+	display: flex;
+	align-items: flex-start;
+}
+
+.user_logo {
+	margin-top: 10px;
+	width: 200px;
+}
+
+.user_logo img {
+	width: 100%;
+}
+
+.user_info {
+	margin-left: 50px;
+}
+
+.item {
+	margin-top: 10px;
+}
+.item a {
+	text-decoration: underline;
+}
