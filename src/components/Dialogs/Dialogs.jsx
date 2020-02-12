@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Dialogs.module.css'
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
-import { addMessageActionCreator, updateNewMessageTextActionCreator } from './../../redux/state';
+
 
 const Dialogs = (props) => {
 
@@ -15,18 +15,15 @@ const Dialogs = (props) => {
         return <Message message={m.message} userClass={m.my ? s.user : ''} />
     });
 
-
     let newMessageElement = React.createRef();
 
-    let addMessage = () => {
-        let action = addMessageActionCreator();
-        props.dispatch(action);
+    let onAddMessage = () => {
+        props.addMessage();
     }
 
     let onMessageChange = () => {
         let text = newMessageElement.current.value;
-        let action = updateNewMessageTextActionCreator(text)
-        props.dispatch(action);
+        props.updateNewMessageText(text);
     }
 
     return (
@@ -48,7 +45,7 @@ const Dialogs = (props) => {
 
             <div className={s.dialogs_form}>
                 <textarea  onChange={onMessageChange} ref={newMessageElement}   value={props.dialogsPage.newMessageText}></textarea>
-                <button onClick={addMessage} >Send it</button>
+                <button onClick={onAddMessage} >Send it</button>
             </div>
         </div>
     );
