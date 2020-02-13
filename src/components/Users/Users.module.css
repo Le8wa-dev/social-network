@@ -1,0 +1,124 @@
+.title {
+    margin-bottom: 30px;
+}
+
+.inner {
+    padding: 0 30px;
+}
+
+.user {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 100px;
+    margin-right: 30px;
+
+    text-align: center;
+}
+
+.avatar {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Button */
+button {
+	margin: 0 auto;
+	display: block;
+	position: relative;
+	overflow: hidden;
+	width: 80px;
+	padding: 5px;
+
+	color: #21ebff;
+	font-weight: 500;
+
+	border: 0;
+	background: 0;
+	cursor: pointer;
+	transition: .3s;
+	-webkit-box-reflect: below 1px linear-gradient(transparent, rgba(48, 48, 48, 0.2));
+}
+
+button:hover {
+	color: #111;
+
+	background: #21ebff;
+	box-shadow: 0px 0px 10px #21ebff;
+
+	transition-delay: .3s;
+
+}
+
+button::before,
+button::after {
+	content: "";
+	width: 10px;
+	height: 10px;
+
+	position: absolute;
+
+	transition: .3s;
+}
+
+button:hover::before,
+button:hover::after {
+	width: 100%;
+	height: 100%;
+}
+
+button::before {
+	top: 0;
+	left: 0;
+
+	border-left: 1px solid #21ebff;
+	border-top: 1px solid #21ebff;
+}
+
+button::after {
+	bottom: 0;
+	right: 0;
+
+	border-right: 1px solid #21ebff;
+	border-bottom: 1px solid #21ebff;
+}
+
+
+.info {
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    border: 1px solid #21ebff;
+    border-radius: 10px;
+}
+
+.info_name {
+    width: 100%;
+}
+
+.info_name .name {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.info_location {
+    width: 150px;
+    
+    text-align: center;
+}
+
+.info_location p {
+    font-size: 18px;
+}
+
+.country {
+    margin-bottom: 20px;
+
+    font-weight: 700;
+}
