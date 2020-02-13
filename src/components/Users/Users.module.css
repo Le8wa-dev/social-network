@@ -2,6 +2,23 @@
     margin-bottom: 30px;
 }
 
+.pagination {
+    margin-bottom: 30px;
+
+    text-align: center;
+}
+
+.pagination span {
+    display: inline-block;
+    margin: 0 5px;
+
+    cursor: pointer;
+}
+
+.selectedPage {
+    font-weight: 700;
+}
+
 .inner {
     padding: 0 30px;
 }
