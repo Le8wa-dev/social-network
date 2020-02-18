@@ -8,8 +8,8 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import UsersContainer from './components/Users/UsersContainer';
 import Settings from './components/Settings/Settings';
+import Login from './components/Login/Login';
 import { Route } from 'react-router-dom';
-
 
 
 const App = (props) => {
@@ -25,6 +25,7 @@ const App = (props) => {
 				<Route path='/news' render={() => <News />} />
 				<Route path='/music' render={() => <Music />} />
 				<Route path='/settings' render={() => <Settings />} />
+				<Route path='/login' render={() => <Login />} />
 			</div>
 
 		</div>

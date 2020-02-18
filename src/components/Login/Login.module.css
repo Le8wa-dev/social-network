@@ -1,0 +1,36 @@
+.form {
+    margin: 50px auto 30px;
+    max-width: 400px;
+}
+
+.row {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.row input {
+    width: 100%;
+    padding: 15px;
+
+    color: #21ebff;
+    font-size: 18px;
+    text-align: center;
+
+    background: 0;
+    border: 1px solid #21ebff;
+}
+
+.row input[type=checkbox] {
+    width: auto;
+}
+.row input::placeholder {
+    color: #21ebff;
+}
+
+button {
+	width: 200px;
+	padding: 15px 10px;
+
+    font-size: 18px;
+	font-weight: 500;
+}

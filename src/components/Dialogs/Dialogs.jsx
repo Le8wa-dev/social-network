@@ -2,29 +2,25 @@ import React from 'react';
 import s from './Dialogs.module.css'
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
+import { Redirect } from 'react-router-dom';
 
+import AddMessageForm from './addMessageForm'
 
 const Dialogs = (props) => {
 
-
-    let dialogsElements = props.dialogsPage.dailogs.map( d => {
+    let dialogsElements = props.dialogsPage.dailogs.map(d => {
         return <DialogItem name={d.name} key={d.id} id={d.id} />
     });
 
-    let messagesElements = props.dialogsPage.messages.map ( m => {
+    let messagesElements = props.dialogsPage.messages.map(m => {
         return <Message message={m.message} key={m.id} userClass={m.my ? s.user : ''} />
     });
 
-    let newMessageElement = React.createRef();
-
-    let onAddMessage = () => {
-        props.addMessage();
+    let addNewMessage = (values) => {
+        props.sendMessage(values.newMessageBody)
     }
 
-    let onMessageChange = () => {
-        let text = newMessageElement.current.value;
-        props.updateNewMessageText(text);
-    }
+    if (!props.isAuth) return <Redirect to='/login' />
 
     return (
         <div className={s.dialogs}>
@@ -32,21 +28,19 @@ const Dialogs = (props) => {
             <div className={s.dialogs_inner}>
                 <div className={s.items}>
 
-                    { dialogsElements }
+                    {dialogsElements}
 
                 </div>
 
                 <div className={s.messages}>
 
-                    { messagesElements }
+                    {messagesElements}
 
                 </div>
             </div>
 
-            <div className={s.dialogs_form}>
-                <textarea  onChange={onMessageChange} ref={newMessageElement}   value={props.dialogsPage.newMessageText}></textarea>
-                <button onClick={onAddMessage} >Send it</button>
-            </div>
+            <AddMessageForm onSubmit={addNewMessage}/>
+
         </div>
     );
 }

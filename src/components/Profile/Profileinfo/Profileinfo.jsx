@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Profileinfo.module.css'
 import Preloader from './../../common/preloader/Preloader';
-
+import ProfileStatus from './ProfileStatus';
 
 const Profileinfo = (props) => {
 
@@ -16,6 +16,7 @@ const Profileinfo = (props) => {
             <img className={s.user_logo} src={props.profile.photos.large} alt="user-logo"/>
             <div className={s.user_info}>
                 <h2 className={s.user_title}>Andrew S.</h2>
+                <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
                 <p className={s.item}>Date of Birth: 01.06.1990</p>
                 <p className={s.item}>City: Moscow</p>
                 <p className={s.item}>Education: MGU 2015</p>
