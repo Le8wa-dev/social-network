@@ -13,3 +13,13 @@
 .header img {
 	height: 40px;
 }
+
+.btn {
+	display: inline-block;
+	margin-left: 15px;
+	padding: 5px;
+	width: 100px;
+
+	font-size: 16px;
+
+}

@@ -3,27 +3,31 @@ import { Field, reduxForm } from 'redux-form';
 import s from './Login.module.css'
 import { Input } from '../common/formsControls/FormsControls';
 import { required } from './../../utils/validators/validators';
+import { connect } from 'react-redux';
+import { login } from './../../redux/auth-reducer';
+import { Redirect } from 'react-router-dom';
+import { createField } from './../common/formsControls/FormsControls';
 
-const LoginForm = (props) => {
+const LoginForm = ({ handleSubmit, error }) => {
 
     return (
-        <form onSubmit={props.handleSubmit} className={s.form}>
+        <form onSubmit={handleSubmit} className={s.form}>
             <div className={s.row}>
-                <Field name={'login'} placeholder={'Login'}
-                validate={[required]}
-                component={Input}/>
+                {createField('Email', 'email', [required], Input)}
             </div>
             <div className={s.row}>
-                <Field name={'password'} placeholder={'Password'}
-                validate={[required]}
-                component={Input}/>
+                {createField('Password', 'password', [required], Input, { type: 'password' })}
             </div>
             <div className={s.row}>
                 <label>
-                    <Field type="checkbox" name={'rememberMe'} component={Input}/>
+                    {createField(null, 'rememberMe', [], Input, { type: 'checkbox' })}
                     Remember me
                     </label>
             </div>
+
+            {error && <div className={s.formSummaryError}>
+                {error}
+            </div>}
             <div>
                 <button>Login</button>
             </div>
@@ -36,9 +40,12 @@ const LoginReduxForm = reduxForm({ form: 'login' })(LoginForm)
 const Login = (props) => {
 
     const onSubmit = (formData) => {
-        console.log(formData)
+        props.login(formData.email, formData.password, formData.rememberMe);
     }
 
+    if (props.isAuth) {
+        return <Redirect to='/profile' />
+    }
     return (
         <div>
             <h2>Login</h2>
@@ -47,6 +54,8 @@ const Login = (props) => {
     )
 }
 
+const mapStateToProps = (state) => ({
+    isAuth: state.auth.isAuth
+});
 
-
-export default Login;
+export default connect(mapStateToProps, { login })(Login);
