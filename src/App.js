@@ -2,13 +2,12 @@ import React, { Suspense } from 'react';
 import './App.css';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Navbar from './components/Navbar/Navbar';
-import { Route, withRouter } from 'react-router-dom';
+import { HashRouter, Route, withRouter } from 'react-router-dom';
 import { connect, Provider } from 'react-redux';
 import { compose } from 'redux';
 import { initializeApp } from './redux/app-reducer';
 import Preloader from './components/common/preloader/Preloader';
 import store from './redux/redux-store';
-import { BrowserRouter } from 'react-router-dom';
 import { withSuspense } from './hoc/withSuspense';
 
 // import ProfileContainer from './components/Profile/ProfileContainer';
@@ -65,11 +64,11 @@ const AppContainer = compose(
 	connect(mapStateToProps, { initializeApp }))(App);
 
 const MainApp = (props) => {
-	return <BrowserRouter>
+	return <HashRouter>
 		<Provider store={store} >
 			<AppContainer />
 		</Provider>
-	</BrowserRouter>
+	</HashRouter>
 }
 
 export default MainApp;

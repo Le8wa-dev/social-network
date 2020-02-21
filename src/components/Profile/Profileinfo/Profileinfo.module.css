@@ -4,21 +4,63 @@
 }
 
 .user_logo {
-	margin-top: 10px;
+	margin: 10px 30px 0 0;
 	width: 200px;
 }
 
 .user_logo img {
 	width: 100%;
+	margin-bottom: 30px;
+}
+
+.user_logo input {
+	cursor: pointer;
 }
 
 .user_info {
 	margin-left: 50px;
 }
 
+.user_title {
+	display: inline-block;
+}
+
+.user_info_btn{
+	width: 80px;
+	padding: 5px;
+	display: inline-block;
+	margin: 10px 0 0 50px;
+
+	font-size: 16px;
+}
+
 .item {
 	margin-top: 10px;
 }
+
+.item span {
+	font-weight: 700;
+}
+
 .item a {
 	text-decoration: underline;
+}
+
+.contactsInner {
+	padding: 10px 0px;
+}
+
+.contact {
+	padding-left: 20px;
+}
+
+
+
+.formSummaryError {
+    margin-bottom: 15px;
+
+    padding: 5px;
+
+    color: red;
+    text-align: center;
 }
