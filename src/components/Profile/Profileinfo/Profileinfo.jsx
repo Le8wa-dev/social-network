@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Profileinfo.module.css'
 import Preloader from './../../common/preloader/Preloader';
 import ProfileStatusWithHooks from './ProfileStatusWithHooks';
+import avatar from './../../../assets/images/user-avatar.png'
 
 const Profileinfo = ({ profile, status, updateStatus }) => {
 
@@ -13,7 +14,7 @@ const Profileinfo = ({ profile, status, updateStatus }) => {
 
     return (
         <div className={s.user}>
-            <img className={s.user_logo} src={profile.photos.large} alt="user-logo" />
+            <img className={s.user_logo} src={profile.photos.large || avatar} alt="user-logo" />
             <div className={s.user_info}>
                 <h2 className={s.user_title}>{profile.fullName}</h2>
                 <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
